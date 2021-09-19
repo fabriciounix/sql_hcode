@@ -1,0 +1,9 @@
+USE hcode;
+
+SELECT * FROM tb_funcionarios;
+
+UPDATE tb_funcionarios SET salario = salario * 1.1;
+
+DELETE FROM tb_funcionarios;
+
+

@@ -1,0 +1,48 @@
+USE hcode;
+
+CREATE TABLE tb_pessoas (
+	id int AUTO_INCREMENT,
+	nome VARCHAR(100) NOT NULL,
+	sexo ENUM('m', 'f') NOT NULL,
+	PRIMARY KEY(id)
+);
+
+INSERT INTO tb_pessoas VALUES(1, 'Fabricio Longuim', 'm');
+
+INSERT INTO tb_pessoas (nome, sexo) VALUES ('Brás de Sarro', 'm');
+
+INSERT INTO tb_pessoas (nome, sexo) VALUES ('Divanei Aparecico', 'm'), ('Jessyca', 'f'), ('Djalma', m),
+('Nataly', 'f'), ('Talyta', 'f'), ('Cristiane', 'f'), ('Jaqueline', 'f'), ('Nabucodonozor', 'm');
+
+INSERT INTO tb_funcionarios SELECT id, nome, 1220, CURRENT_DATE(), sexo, NULL FROM tb_pessoas;
+
+SELECT COUNT(*) FROM tb_funcionarios; 
+
+SELECT COUNT(*) AS total FROM tb_funcionarios;
+
+SELECT nome, salario AS atual, CONVERT(salario * 1.1, DEC(10,2)) AS 'salario com autmento de 10%' FROM tb_funcionarios;
+
+SELECT * FROM tb_funcionarios WHERE sexo = 'm' AND salario > 1220;
+
+UPDATE tb_funcionarios SET salario = salario * 1.4 Where id = 3;
+
+SELECT * FROM tb_funcionarios WHERE sexo = 'f' OR salario > 1220;
+
+SELECT * FROM tb_funcionarios WHERE nome LIKE '%a%';
+
+SELECT * FROM tb_funcionarios WHERE nome LIKE 'a%';
+
+SELECT * FROM tb_funcionarios WHERE nome LIKE '%a';
+
+SELECT * FROM tb_funcionarios WHERE nome LIKE '__v%';
+
+SELECT * FROM tb_funcionarios WHERE nome NOT LIKE 'j%';
+
+SELECT * FROM tb_funcionarios WHERE salario BETWEEN 1000 AND 2000;
+
+SELECT * FROM tb_funcionarios WHERE SOUNDEX(nome) = SOUNDEX('Jessica');
+
+
+
+
+

@@ -1,0 +1,24 @@
+CREATE DATABASE banco;
+
+USE banco;
+
+CREATE DATABASE hcode;
+
+USE hcode;
+
+CREATE TABLE clientes(
+	id INT,
+	nome VARCHAR(100)
+);
+
+INSERT INTO clientes VALUES(1, 'Brás de Sarro');
+
+SELECT * FROM clientes;
+
+INSERT INTO clientes (nome,id) VALUES('Fabricio Longuim', 2);
+
+
+
+
+
+

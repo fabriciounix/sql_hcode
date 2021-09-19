@@ -1,0 +1,21 @@
+DROP DATABASE banco;
+
+DROP DATABASE hcode;
+
+CREATE DATABASE hcode;
+
+USE hcode;
+
+CREATE TABLE tb_funcionarios (
+	id INT,
+	nome VARCHAR(100),
+	salario DECIMAL(10,2),
+	adimissao DATE,
+	sexo ENUM('f', 'm'),
+	cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
+);
+
+INSERT INTO tb_funcionarios VALUES(1, 'Fabricio Longuim', 4999.99, '2021-08-22', 'm', NULL);
+
+//comando para ver como foi feita a tabela
+DESCRIBE tb_funcionarios;

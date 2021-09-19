@@ -1,0 +1,30 @@
+SELECT * FROM tb_funcionarios WHERE cadastro > '2021-08-21';
+SELECT * FROM tb_funcionarios WHERE cadastro > '2021/08/21';
+SELECT * FROM tb_funcionarios WHERE cadastro > '2021.08.21';
+SELECT * FROM tb_funcionarios WHERE cadastro > '20210821';
+
+UPDATE tb_funcionarios SET adimissao = CURRENT_DATE() WHERE id = 1;
+
+UPDATE tb_funcionarios SET adimissao = DATE_ADD(CURRENT_DATE(), INTERVAL 60 DAY) WHERE id = 2;
+
+UPDATE tb_funcionarios SET adimissao = DATE_ADD('2021/08/22', INTERVAL 48 DAY) WHERE id = 3;
+
+SELECT DATEDIFF(adimissao, CURRENT_DATE()) AS 'diferença de dias' FROM tb_funcionarios WHERE id = 2;
+
+SELECT * FROM tb_funcionarios WHERE MONTH(adimissao) = 5;
+
+SELECT * FROM tb_funcionarios ORDER BY nome 2;
+
+SELECT * FROM tb_funcionarios ORDER BY salario;
+
+SELECT * FROM tb_funcionarios ORDER BY nome salario DESC;
+
+SELECT * FROM tb_funcionarios ORDER BY salario DESC, nome ASC;
+
+SELECT * FROM tb_funcionarios ORDER BY salario LIMIT 0,3;
+
+SELECT * FROM tb_funcionarios WHERE YEAR(cadastro) = 2021 AND MONTH(cadastro) = 5
+ ORDER BY salario LIMIT 0,3;
+
+SELECT * FROM tb_funcionarios WHERE YEAR(adimissao) = 2021 AND MONTH(adimissao) = 5
+ ORDER BY salario LIMIT 0,3;

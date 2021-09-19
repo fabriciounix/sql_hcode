@@ -1,0 +1,11 @@
+DELIMITER $$
+
+CREATE PROCEDURE sp_pessoa_save (
+pdesnome VARCHAR(256)
+)
+BEGIN 
+	INSERT INTO tb_pessoas VALUES(NULL, pdesnome, NULL);
+	SELECT * FROM tb_pessoas WHERE idpessoa = last_insert_id();
+END $$
+
+DELIMITER ;
